@@ -1,0 +1,36 @@
+{
+  "name": "kepler",
+  "version": "1.0.0",
+  "description": "API para plataforma de sistemas fotovoltaicos",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+		"migrate": "npx sequelize-cli db:migrate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tgolembi/kepler.git"
+  },
+  "keywords": [
+    "fotovoltaica",
+    "solar",
+    "energia",
+    "renovável"
+  ],
+  "author": "Ton Golembiouski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tgolembi/kepler/issues"
+  },
+  "homepage": "https://github.com/tgolembi/kepler#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.25.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "sequelize-cli": "^6.5.2"
+  }
+}
