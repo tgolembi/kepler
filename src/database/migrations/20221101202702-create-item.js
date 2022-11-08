@@ -35,6 +35,10 @@ module.exports = {
 				allowNull: false,
 				unique: true
 			},
+			alias: {
+				type: Sequelize.STRING,
+				allowNull: false
+			},
 			description: {
 				type: Sequelize.STRING,
 				allowNull: false
@@ -47,9 +51,13 @@ module.exports = {
 					key: 'id'
 				}
 			},
-			type: {
+			type_id: {
 				type: Sequelize.INTEGER,
-				allowNull: true
+				allowNull: true,
+				references: {
+					model: 'ItemTypes',
+					key: 'id'
+				}
 			},
 			series: {
 				type: Sequelize.STRING,

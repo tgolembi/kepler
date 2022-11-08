@@ -1,5 +1,6 @@
 const express = require('express');
 const ManufacturerController = require('./controllers/ManufacturerController.js');
+const ItemTypeController = require('./controllers/ItemTypeController.js');
 const ItemController = require('./controllers/ItemController.js');
 const PanelController = require('./controllers/PanelController.js');
 
@@ -11,6 +12,11 @@ routes.get(`${apiv}/manufacturers`, ManufacturerController.index);
 routes.post(`${apiv}/manufacturers`, ManufacturerController.store);
 routes.patch(`${apiv}/manufacturers/:id`, ManufacturerController.edit);
 routes.delete(`${apiv}/manufacturers/:id`, ManufacturerController.remove);
+
+routes.get(`${apiv}/itemtypes`, ItemTypeController.index);
+routes.post(`${apiv}/itemtypes`, ItemTypeController.store);
+routes.patch(`${apiv}/itemtypes/:id`, ItemTypeController.edit);
+routes.delete(`${apiv}/itemtypes/:id`, ItemTypeController.remove);
 
 routes.get(`${apiv}/items`, ItemController.index);
 routes.post(`${apiv}/items`, ItemController.store);

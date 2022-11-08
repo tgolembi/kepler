@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 
-class PanelData extends Model {
+class Panel extends Model {
 	static init(sequelize) {
 		super.init({
 			panel_id: DataTypes.INTEGER,
@@ -42,4 +42,4 @@ class PanelData extends Model {
 	}
 };
 
-module.exports = PanelData;
+module.exports = Panel;
