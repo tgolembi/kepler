@@ -3,7 +3,7 @@ const { Model, DataTypes } = require('sequelize');
 class Panel extends Model {
 	static init(sequelize) {
 		super.init({
-			panel_id: DataTypes.INTEGER,
+			item_id: DataTypes.INTEGER,
 			description: DataTypes.STRING,
 			active: DataTypes.BOOLEAN,
 			notes: DataTypes.STRING,
