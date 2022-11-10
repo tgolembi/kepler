@@ -1,4 +1,5 @@
 const express = require('express');
+const auth = require('./middleware/auth.js');
 const UserController = require('./controllers/UserController.js');
 const ManufacturerController = require('./controllers/ManufacturerController.js');
 const ItemTypeController = require('./controllers/ItemTypeController.js');
@@ -9,29 +10,31 @@ const apiv = '/api/v1';
 
 const routes = express.Router();
 
-routes.get(`${apiv}/users`, UserController.index);
-routes.post(`${apiv}/users`, UserController.store);
-routes.patch(`${apiv}/users/:id`, UserController.edit);
-routes.delete(`${apiv}/users/:id`, UserController.remove);
+routes.post(`${apiv}/authenticate`, UserController.authenticate);
 
-routes.get(`${apiv}/manufacturers`, ManufacturerController.index);
-routes.post(`${apiv}/manufacturers`, ManufacturerController.store);
-routes.patch(`${apiv}/manufacturers/:id`, ManufacturerController.edit);
-routes.delete(`${apiv}/manufacturers/:id`, ManufacturerController.remove);
+routes.get(`${apiv}/users`, auth, UserController.index);
+routes.post(`${apiv}/users`, auth, UserController.store);
+routes.patch(`${apiv}/users/:id`, auth, UserController.edit);
+routes.delete(`${apiv}/users/:id`, auth, UserController.remove);
 
-routes.get(`${apiv}/itemtypes`, ItemTypeController.index);
-routes.post(`${apiv}/itemtypes`, ItemTypeController.store);
-routes.patch(`${apiv}/itemtypes/:id`, ItemTypeController.edit);
-routes.delete(`${apiv}/itemtypes/:id`, ItemTypeController.remove);
+routes.get(`${apiv}/manufacturers`, auth, ManufacturerController.index);
+routes.post(`${apiv}/manufacturers`, auth, ManufacturerController.store);
+routes.patch(`${apiv}/manufacturers/:id`, auth, ManufacturerController.edit);
+routes.delete(`${apiv}/manufacturers/:id`, auth, ManufacturerController.remove);
 
-routes.get(`${apiv}/items`, ItemController.index);
-routes.post(`${apiv}/items`, ItemController.store);
-routes.patch(`${apiv}/items/:id`, ItemController.edit);
-routes.delete(`${apiv}/items/:id`, ItemController.remove);
+routes.get(`${apiv}/itemtypes`, auth, ItemTypeController.index);
+routes.post(`${apiv}/itemtypes`, auth, ItemTypeController.store);
+routes.patch(`${apiv}/itemtypes/:id`, auth, ItemTypeController.edit);
+routes.delete(`${apiv}/itemtypes/:id`, auth, ItemTypeController.remove);
 
-routes.get(`${apiv}/panels`, PanelController.index);
-routes.post(`${apiv}/panels`, PanelController.store);
-routes.patch(`${apiv}/panels/:id`, PanelController.edit);
-routes.delete(`${apiv}/panels/:id`, PanelController.remove);
+routes.get(`${apiv}/items`, auth, ItemController.index);
+routes.post(`${apiv}/items`, auth, ItemController.store);
+routes.patch(`${apiv}/items/:id`, auth, ItemController.edit);
+routes.delete(`${apiv}/items/:id`, auth, ItemController.remove);
+
+routes.get(`${apiv}/panels`, auth, PanelController.index);
+routes.post(`${apiv}/panels`, auth, PanelController.store);
+routes.patch(`${apiv}/panels/:id`, auth, PanelController.edit);
+routes.delete(`${apiv}/panels/:id`, auth, PanelController.remove);
 
 module.exports = routes;

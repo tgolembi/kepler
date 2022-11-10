@@ -12,7 +12,7 @@ class User extends Model {
 			modelName: 'Users',
 			defaultScope: {
 				attributes: {
-					exclude: ['password']
+					//exclude: ['password']
 				}
 			}
 		})
