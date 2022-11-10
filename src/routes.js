@@ -1,4 +1,5 @@
 const express = require('express');
+const UserController = require('./controllers/UserController.js');
 const ManufacturerController = require('./controllers/ManufacturerController.js');
 const ItemTypeController = require('./controllers/ItemTypeController.js');
 const ItemController = require('./controllers/ItemController.js');
@@ -7,6 +8,11 @@ const PanelController = require('./controllers/PanelController.js');
 const apiv = '/api/v1';
 
 const routes = express.Router();
+
+routes.get(`${apiv}/users`, UserController.index);
+routes.post(`${apiv}/users`, UserController.store);
+routes.patch(`${apiv}/users/:id`, UserController.edit);
+routes.delete(`${apiv}/users/:id`, UserController.remove);
 
 routes.get(`${apiv}/manufacturers`, ManufacturerController.index);
 routes.post(`${apiv}/manufacturers`, ManufacturerController.store);
