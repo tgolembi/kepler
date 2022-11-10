@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "node ./src/server.js",
-		"mon": "nodemon ./src/server.js",
+    "mon": "nodemon ./src/server.js",
     "migrate": "npx sequelize-cli db:migrate"
   },
   "repository": {
@@ -27,6 +27,7 @@
   "dependencies": {
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "mariadb": "^3.0.2",
     "pg": "^8.8.0",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.25.3"
