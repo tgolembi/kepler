@@ -1,7 +1,10 @@
 const Manufacturer = require('../models/Manufacturer.js');
 
 async function index (req,res) {
-	const items = await Manufacturer.findAll();
+	//TODO: create a better condition evaluation from req.query.type sent by user:
+	let condition = Object();
+	if (req.query.type) condition = JSON.parse(`{"where":{"${req.query.type}":true}}`);
+	const items = await Manufacturer.findAll(condition);
 	return res.json(items);
 }
 
