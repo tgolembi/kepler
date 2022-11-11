@@ -29,6 +29,7 @@ routes.delete(`${apiv}/itemtypes/:id`, auth, ItemTypeController.remove);
 
 routes.get(`${apiv}/items`, auth, ItemController.index);
 routes.post(`${apiv}/items`, auth, ItemController.store);
+routes.post(`${apiv}/items/load`, auth, ItemController.load);
 routes.patch(`${apiv}/items/:id`, auth, ItemController.edit);
 routes.delete(`${apiv}/items/:id`, auth, ItemController.remove);
 

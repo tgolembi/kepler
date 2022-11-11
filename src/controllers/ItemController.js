@@ -26,4 +26,10 @@ async function remove (req,res) {
 }
 
 
-module.exports = { index, store, edit, remove };
+async function load (req,res) {
+	const dbResponse = await Item.bulkCreate(req.body);
+	return res.json(dbResponse);
+}
+
+
+module.exports = { index, store, edit, remove, load };
