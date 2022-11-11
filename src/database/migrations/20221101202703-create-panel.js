@@ -121,7 +121,8 @@ const panelModel = {
 		allowNull: true
 	},
 	cell_type: {
-		type: Sequelize.STRING,
+		type: Sequelize.ENUM,
+		values: ['M','P'],
 		allowNull: true
 	},
 	cell_length: {
