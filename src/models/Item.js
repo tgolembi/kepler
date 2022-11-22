@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 
 class Item extends Model {
-  static init(sequelize) {
+  static init (sequelize) {
     super.init({
       code: DataTypes.STRING,
       alias: DataTypes.STRING,
@@ -13,11 +13,11 @@ class Item extends Model {
       version: DataTypes.STRING,
       active: DataTypes.BOOLEAN,
       notes: DataTypes.STRING
-    },{
+    }, {
       sequelize,
       freezeTableName: true,
       modelName: 'Items'
-    })
+    });
   }
 };
 

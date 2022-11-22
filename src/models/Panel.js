@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 
 class Panel extends Model {
-  static init(sequelize) {
+  static init (sequelize) {
     super.init({
       item_id: DataTypes.INTEGER,
       description: DataTypes.STRING,
@@ -34,11 +34,11 @@ class Panel extends Model {
       output_cable_length: DataTypes.DECIMAL,
       cross_section_area_mm2: DataTypes.DECIMAL,
       connectorType: DataTypes.STRING
-    },{
+    }, {
       sequelize,
       freezeTableName: true,
       modelName: 'Panels'
-    })
+    });
   }
 };
 

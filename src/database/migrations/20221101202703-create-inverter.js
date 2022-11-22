@@ -1,6 +1,6 @@
 'use strict';
 
-const { Sequelize } = require("sequelize");
+const { Sequelize } = require('sequelize');
 
 const inverterModel = {
   id: {
@@ -69,4 +69,4 @@ module.exports = {
   down: (queryInterface, Sequelize) => {
     return queryInterface.dropTable('Inverters');
   }
-}
+};

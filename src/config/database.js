@@ -11,7 +11,7 @@ module.exports = {
     underscored: true
   },
   dialectOptions: {
-    useUTC: false, // reading from database
+    useUTC: false // reading from database
   },
-  timezone: '-03:00', // writing to database
+  timezone: '-03:00' // writing to database
 };

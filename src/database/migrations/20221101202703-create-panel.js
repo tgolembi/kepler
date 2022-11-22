@@ -1,6 +1,6 @@
 'use strict';
 
-const { Sequelize } = require("sequelize");
+const { Sequelize } = require('sequelize');
 
 const panelModel = {
   id: {
@@ -122,7 +122,7 @@ const panelModel = {
   },
   cell_type: {
     type: Sequelize.ENUM,
-    values: ['M','P'],
+    values: ['M', 'P'],
     allowNull: true
   },
   cell_length: {
@@ -158,4 +158,4 @@ module.exports = {
   down: (queryInterface, Sequelize) => {
     return queryInterface.dropTable('Panels');
   }
-}
+};
