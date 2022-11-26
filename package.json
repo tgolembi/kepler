@@ -1,7 +1,7 @@
 {
-  "name": "kepler",
+  "name": "kepler_sql",
   "version": "1.0.0",
-  "description": "API para plataforma de sistemas fotovoltaicos",
+  "description": "API para plataforma de sistemas fotovoltaicos (antiga versão SQL)",
   "main": "index.js",
   "scripts": {
     "dev": "node ./src/server.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tgolembi/kepler.git"
+    "url": "git+https://github.com/tgolembi/kepler_sql.git"
   },
   "keywords": [
     "fotovoltaica",
@@ -22,9 +22,9 @@
   "author": "Ton Golembiouski",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tgolembi/kepler/issues"
+    "url": "https://github.com/tgolembi/kepler_sql/issues"
   },
-  "homepage": "https://github.com/tgolembi/kepler#readme",
+  "homepage": "https://github.com/tgolembi/kepler_sql#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.0.3",
